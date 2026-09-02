@@ -5,20 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>สิ่งอำนวยความสะดวก - S1 Living On Your Style</title>
     <style>
-        body { background: url('bg.jpg'); color: #fff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; text-align: center; }
-        .container { max-width: 500px; margin: 40px auto; background: rgba(30, 30, 30, 0.9); border: 1px solid rgba(212, 175, 55, 0.4); border-radius: 16px; padding: 25px; }
-        img { width: 100%; border-radius: 8px; margin-bottom: 15px; }
-        h2 { color: #d4af37; margin-bottom: 15px; }
-        p { color: #ccc; font-size: 14px; line-height: 1.6; margin-bottom: 20px; }
-        .btn-back { display: inline-block; padding: 10px 20px; background: #d4af37; color: #1a1a1a; text-decoration: none; border-radius: 8px; font-weight: bold; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: url('bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.65);
+        }
+        .container {
+            position: relative;
+            background: rgba(30, 30, 30, 0.85);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 16px;
+            padding: 25px 20px;
+            width: 90%;
+            max-width: 480px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+            z-index: 2;
+        }
+        .container img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        h2 {
+            font-size: 16px;
+            color: #f3e5ab;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        p {
+            color: #b0b0b0;
+            font-size: 13px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .btn-back {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #7a2222 0%, #4a1212 100%);
+            border: 1px solid #d4af37;
+            color: #f3e5ab;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .btn-back:hover {
+            background: #d4af37;
+            color: #1a1a1a;
+        }
     </style>
 </head>
 <body>
+    <div class="overlay"></div>
     <div class="container">
         <h2>สิ่งอำนวยความสะดวก (Amenities)</h2>
         <img src="amenities.jpg" alt="Amenities">
         <p>บริการสิ่งอำนวยความสะดวกต่างๆ ภายในที่พัก เพื่อความสะดวกสบายตลอดการเข้าพักของคุณ</p>
-        <a href="index.html" class="btn-back">กลับหน้าหลัก</a>
+        <a href="index.html" class="btn-back">กลับหน้าหลัก / Back</a>
     </div>
 </body>
 </html>
