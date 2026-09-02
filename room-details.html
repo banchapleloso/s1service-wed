@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>สิ่งอำนวยความสะดวก - S1 Living On Your Style</title>
+    <title>ห้องพักของเรา - S1 Living On Your Style</title>
     <style>
         * {
             box-sizing: border-box;
@@ -24,67 +24,58 @@
         .overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.75);
+            background: rgba(0, 0, 0, 0.7); /* ปรับความเข้มเล็กน้อย */
             z-index: 1;
         }
         .container {
             position: relative;
-            background: rgba(30, 30, 30, 0.9);
+            background: rgba(30, 30, 30, 0.9); /* ปรับความทึบเล็กน้อย */
             border: 1px solid rgba(212, 175, 55, 0.4);
             border-radius: 16px;
             padding: 30px 25px;
             width: 90%;
-            max-width: 650px;
+            max-width: 650px; /* ขยายความกว้างเพื่อให้ใส่ 4 รูปได้สวยงาม */
             text-align: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             backdrop-filter: blur(5px);
             z-index: 2;
         }
+
         h2 {
-            font-size: 20px;
+            font-size: 18px;
             color: #f3e5ab;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-weight: 600;
         }
-        /* ส่วนแสดงรูปภาพ 4 ช่อง */
-        .image-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
+
+        p {
+            color: #b0b0b0;
+            font-size: 13px;
+            line-height: 1.5;
             margin-bottom: 20px;
         }
-        .image-grid img {
+
+        /* สไตล์ใหม่สำหรับแสดงรูป 4 รูป (Grid) */
+        .room-images-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* แบ่งเป็น 2 คอลัมน์ */
+            gap: 15px; /* ระยะห่างระหว่างรูป */
+            margin-bottom: 20px;
+        }
+
+        .room-images-grid img {
             width: 100%;
-            height: 120px;
+            height: 140px; /* กำหนดความสูงของรูป */
             object-fit: cover;
             border-radius: 8px;
             border: 1px solid rgba(212, 175, 55, 0.3);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease; /* เพิ่มลูกเล่นเมื่อเอาเมาส์ชี้ */
         }
-        .image-grid img:hover {
-            transform: scale(1.03);
+
+        .room-images-grid img:hover {
+            transform: scale(1.05); /* ขยายรูปเล็กน้อยเมื่อชี้ */
         }
-        /* กล่องข้อความสิ่งอำนวยความสะดวก */
-        .amenities-list {
-            text-align: left;
-            margin-bottom: 25px;
-            background: rgba(20, 20, 20, 0.6);
-            padding: 15px 20px;
-            border-radius: 10px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-        }
-        .amenities-item {
-            color: #dcdcdc;
-            font-size: 13px;
-            line-height: 1.6;
-            margin-bottom: 10px;
-        }
-        .amenities-item:last-child {
-            margin-bottom: 0;
-        }
-        .amenities-item strong {
-            color: #f3e5ab;
-        }
+
         .btn-back {
             display: block;
             width: 100%;
@@ -100,47 +91,45 @@
             transition: all 0.3s;
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
+
         .btn-back:hover {
             background: #d4af37;
             color: #1a1a1a;
         }
 
-        /* Responsive สำหรับมือถือจอเล็ก */
+        /* Responsive สำหรับหน้าจอขนาดเล็ก (มือถือ) */
         @media (max-width: 480px) {
-            .image-grid {
-                grid-template-columns: 1fr;
+            .container {
+                width: 95%;
+                padding: 20px 15px;
             }
-            .image-grid img {
-                height: 160px;
+            .room-images-grid {
+                gap: 10px;
             }
+            .room-images-grid img {
+                height: 100px; /* ปรับลดความสูงบนมือถือ */
+            }
+            h2 { font-size: 16px; }
+            p { font-size: 12px; }
         }
     </style>
 </head>
 <body>
     <div class="overlay"></div>
     <div class="container">
-        <h2>สิ่งอำนวยความสะดวก (Amenities)</h2>
+        <h2>ห้องพักของเรา (Our Rooms)</h2>
         
-        <!-- ช่องใส่รูป 4 ช่อง (สามารถเปลี่ยนชื่อไฟล์รูปภาพ amenities1.jpg เป็นต้นได้ตามต้องการ) -->
-        <div class="image-grid">
-            <img src="praking.jpg" alt="สิ่งอำนวยความสะดวก 1">
-            <img src="bg.jpg" alt="สิ่งอำนวยความสะดวก 2">
-            <img src="6.jpg" alt="สิ่งอำนวยความสะดวก 3">
-            <img src="amenities.jpg" alt="สิ่งอำนวยความสะดวก 4">
+        <!-- ส่วนแสดงรูปภาพ 4 รูป (Grid) -->
+        <div class="room-images-grid">
+            <!-- แก้ไข src และ alt ตามชื่อไฟล์รูปภาพจริงของคุณ -->
+            <img src="room.jpg" alt="มุมห้องนอน S1 Living">
+            <img src="services.jpg" alt="มุมนั่งเล่นและทำงาน">
+            <img src="6.jpg" alt="ห้องน้ำ S1 Living">
+            <img src="10.jpg" alt="ระเบียงห้องพัก">
         </div>
 
-        <!-- รายละเอียดสิ่งอำนวยความสะดวก -->
-        <div class="amenities-list">
-            <div class="amenities-item"><strong>เฟอร์นิเจอร์ครบชุด:</strong> เตียงนอนพร้อมฟูกหนานุ่ม ตู้เสื้อผ้าขนาดใหญ่ โต๊ะทำงาน และเก้าอี้</div>
-            <div class="amenities-item"><strong>เครื่องใช้ไฟฟ้า:</strong> เครื่องปรับอากาศประหยัดไฟเบอร์ 5, เครื่องทำน้ำอุ่น, ตู้เย็น และทีวี</div>
-            <div class="amenities-item"><strong>ระบบอินเทอร์เน็ต:</strong> สัญญาณ Wi-Fi ความเร็วสูง ครอบคลุมทุกห้องพัก</div>
-            <div class="amenities-item"><strong>การออกแบบส่วนตัว:</strong> ห้องน้ำในตัว และระเบียงส่วนตัวสำหรับตากผ้าหรือรับลม</div>
-            <div class="amenities-item"><strong>ระบบรักษาความปลอดภัย:</strong> เข้า-ออกด้วยระบบคีย์การ์ด และกล้อง CCTV 24 ชั่วโมง</div>
-            <div class="amenities-item"><strong>พื้นที่จอดรถ:</strong> ที่จอดรถจักรยานยนต์และรถยนต์ในร่ม พร้อมระบบดูแลความปลอดภัย</div>
-            <div class="amenities-item"><strong>พื้นที่พักผ่อน:</strong> ล็อบบี้ส่วนกลางสำหรับนั่งเล่น หรือนั่งทำงาน พร้อมมุมนิติบุคคลคอยช่วยเหลือ</div>
-        </div>
-
-        <a href="index.html" class="btn-back">กลับหน้าหลัก / Back</a>
+        <p>รายละเอียดข้อมูลห้องพัก สิ่งอำนวยความสะดวกครบครัน บรรยากาศอบอุ่น เหมาะสำหรับการพักผ่อนของคุณ</p>
+        <a href="status.html" class="btn-back">กลับหน้าหลัก / Back</a>
     </div>
 </body>
 </html>
