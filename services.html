@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บริการของเรา - S1 Living On Your Style</title>
+    <style>
+        body { background: #1a1a1a; color: #fff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; text-align: center; }
+        .container { max-width: 500px; margin: 20px auto; background: rgba(30, 30, 30, 0.9); border: 1px solid rgba(212, 175, 55, 0.4); border-radius: 16px; padding: 25px; }
+        img.main-img { width: 100%; border-radius: 8px; margin-bottom: 15px; }
+        h2 { color: #d4af37; margin-bottom: 15px; }
+        p { color: #ccc; font-size: 14px; line-height: 1.6; margin-bottom: 15px; }
+        
+        /* สไตล์สำหรับส่วนชำระเงินและติดต่อ */
+        .payment-section {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px dashed rgba(212, 175, 55, 0.5);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .qr-code {
+            width: 160px;
+            height: 160px;
+            border-radius: 6px;
+            background: #fff;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        .contact-info {
+            font-size: 13px;
+            color: #f3e5ab;
+            margin-top: 10px;
+        }
+
+        .btn-back { display: inline-block; padding: 10px 20px; background: #d4af37; color: #1a1a1a; text-decoration: none; border-radius: 8px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>รายละเอียดการติดต่อและชำระเงิน<br><span style="font-size: 16px;">(S1 service apartment)</span></h2>
+        <img class="main-img" src="img/services.jpg" alt="Services">
+        <p>รายละเอียดการบริการต่างๆ ที่เราพร้อมอำนวยความสะดวกและดูแลท่านด้วยความยินดี</p>
+        
+        <!-- ส่วนเพิ่ม QR Code ชำระเงินและช่องทางติดต่อ -->
+        <div class="payment-section">
+            <p style="color: #d4af37; font-weight: bold; margin-bottom: 8px;">ชำระเงิน / Scan to Pay</p>
+            <!-- เปลี่ยนชื่อไฟล์รูป QR Code ของคุณตรง src="..." -->
+            <img class="qr-code" src="img/qrcode-payment.png" alt="Payment QR Code">
+            <div class="contact-info">
+                ติดต่อสอบถามเพิ่มเติม / 
+            </div>
+        </div>
+
+        <a href="status.html" class="btn-back">กลับหน้าหลัก</a>
+    </div>
+</body>
+</html>
