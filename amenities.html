@@ -14,49 +14,76 @@
         body {
             background: url('bg.jpg') no-repeat center center fixed;
             background-size: cover;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             color: #fff;
+            padding: 20px 0;
         }
         .overlay {
-            position: absolute;
+            position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.65);
+            background: rgba(0, 0, 0, 0.75);
+            z-index: 1;
         }
         .container {
             position: relative;
-            background: rgba(30, 30, 30, 0.85);
+            background: rgba(30, 30, 30, 0.9);
             border: 1px solid rgba(212, 175, 55, 0.4);
             border-radius: 16px;
-            padding: 25px 20px;
+            padding: 30px 25px;
             width: 90%;
-            max-width: 480px;
+            max-width: 650px;
             text-align: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             backdrop-filter: blur(5px);
             z-index: 2;
         }
-        .container img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-        }
         h2 {
-            font-size: 16px;
+            font-size: 20px;
             color: #f3e5ab;
-            margin-bottom: 12px;
+            margin-bottom: 20px;
             font-weight: 600;
         }
-        p {
-            color: #b0b0b0;
-            font-size: 13px;
-            line-height: 1.5;
+        /* ส่วนแสดงรูปภาพ 4 ช่อง */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
             margin-bottom: 20px;
+        }
+        .image-grid img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: transform 0.3s ease;
+        }
+        .image-grid img:hover {
+            transform: scale(1.03);
+        }
+        /* กล่องข้อความสิ่งอำนวยความสะดวก */
+        .amenities-list {
+            text-align: left;
+            margin-bottom: 25px;
+            background: rgba(20, 20, 20, 0.6);
+            padding: 15px 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .amenities-item {
+            color: #dcdcdc;
+            font-size: 13px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        .amenities-item:last-child {
+            margin-bottom: 0;
+        }
+        .amenities-item strong {
+            color: #f3e5ab;
         }
         .btn-back {
             display: block;
@@ -77,15 +104,43 @@
             background: #d4af37;
             color: #1a1a1a;
         }
+
+        /* Responsive สำหรับมือถือจอเล็ก */
+        @media (max-width: 480px) {
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+            .image-grid img {
+                height: 160px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="overlay"></div>
     <div class="container">
         <h2>สิ่งอำนวยความสะดวก (Amenities)</h2>
-        <img src="amenities.jpg" alt="Amenities">
-        <p>บริการสิ่งอำนวยความสะดวกต่างๆ ภายในที่พัก เพื่อความสะดวกสบายตลอดการเข้าพักของคุณ</p>
-        <a href="index.html" class="btn-back">กลับหน้าหลัก / Back</a>
+        
+        <!-- ช่องใส่รูป 4 ช่อง (สามารถเปลี่ยนชื่อไฟล์รูปภาพ amenities1.jpg เป็นต้นได้ตามต้องการ) -->
+        <div class="image-grid">
+            <img src="praking.jpg" alt="สิ่งอำนวยความสะดวก 1">
+            <img src="bg.jpg" alt="สิ่งอำนวยความสะดวก 2">
+            <img src="6.jpg" alt="สิ่งอำนวยความสะดวก 3">
+            <img src="amenities.jpg" alt="สิ่งอำนวยความสะดวก 4">
+        </div>
+
+        <!-- รายละเอียดสิ่งอำนวยความสะดวก -->
+        <div class="amenities-list">
+            <div class="amenities-item"><strong>เฟอร์นิเจอร์ครบชุด:</strong> เตียงนอนพร้อมฟูกหนานุ่ม ตู้เสื้อผ้าขนาดใหญ่ โต๊ะทำงาน และเก้าอี้</div>
+            <div class="amenities-item"><strong>เครื่องใช้ไฟฟ้า:</strong> เครื่องปรับอากาศประหยัดไฟเบอร์ 5, เครื่องทำน้ำอุ่น, ตู้เย็น และทีวี</div>
+            <div class="amenities-item"><strong>ระบบอินเทอร์เน็ต:</strong> สัญญาณ Wi-Fi ความเร็วสูง ครอบคลุมทุกห้องพัก</div>
+            <div class="amenities-item"><strong>การออกแบบส่วนตัว:</strong> ห้องน้ำในตัว และระเบียงส่วนตัวสำหรับตากผ้าหรือรับลม</div>
+            <div class="amenities-item"><strong>ระบบรักษาความปลอดภัย:</strong> เข้า-ออกด้วยระบบคีย์การ์ด และกล้อง CCTV 24 ชั่วโมง</div>
+            <div class="amenities-item"><strong>พื้นที่จอดรถ:</strong> ที่จอดรถจักรยานยนต์และรถยนต์ในร่ม พร้อมระบบดูแลความปลอดภัย</div>
+            <div class="amenities-item"><strong>พื้นที่พักผ่อน:</strong> ล็อบบี้ส่วนกลางสำหรับนั่งเล่น หรือนั่งทำงาน พร้อมมุมนิติบุคคลคอยช่วยเหลือ</div>
+        </div>
+
+        <a href="status.html" class="btn-back">กลับหน้าหลัก / Back</a>
     </div>
 </body>
 </html>
